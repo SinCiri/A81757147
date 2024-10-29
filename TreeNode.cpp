@@ -28,7 +28,7 @@
   }
 //TODO
   TreeNode * TreeNode::getLeft(){
-    //
+    return left;
   }
   TreeNode * TreeNode::getRight(){
     return right;
@@ -40,7 +40,7 @@
 // does not create any new node. Just sets the left pointer
 //TODO
   void TreeNode::setLeft(TreeNode *newLeft){
-  //
+  left = newLeft;
   }
  
  bool TreeNode::isLeaf(){
@@ -54,5 +54,6 @@
 //TODO
   void TreeNode::addLeft(int data){
   //
+  left = new TreeNode(data, nullptr, nullptr);
   }
  

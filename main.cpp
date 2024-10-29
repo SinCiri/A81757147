@@ -1,4 +1,4 @@
-Template
+
 #include "TreeNode.h"
 //GIVEN
 void inorderTraversal(TreeNode * root);
@@ -94,8 +94,19 @@ TreeNode * search(TreeNode * node, int data){
   // if no left tree, but right tree exists and search data greater than
   //this nodes data return the result of recursive all to search with right pointer
   // if both above conditions not true return null ptr
-  
-  
+  if(node == nullptr) {
+    return nullptr;
+  }
+  if(node->getData() == data) {
+    return node;
+  }
+  else if (node->getData() > data && node->getLeft() != nullptr ) {
+    return search(node->getLeft(), data);
+  }
+  else if (node->getData() < data && node->getRight() != nullptr){
+    return search(node->getRight(), data);
+  }
+  return nullptr;
 }
 //uses recursion
 void insert(TreeNode * node,int data){
